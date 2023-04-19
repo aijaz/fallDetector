@@ -54,8 +54,10 @@ class MainWindow(QtWidgets.QMainWindow):
             # First time we have no plot reference, so do a normal plot.
             # .plot returns a list of line <reference>s, as we're
             # only getting one we can take the first element.
-            plot_refs1 = self.canvas.axes.plot(self.xdata, self.ydata, 'r', color='blue')
-            plot_refs2 = self.canvas.axes.plot(self.xdata, self.ydata2, 'r')
+            plot_refs1 = self.canvas.axes.plot(self.xdata, self.ydata, 'r', color='blue', label="GX")
+            plot_refs2 = self.canvas.axes.plot(self.xdata, self.ydata2, 'r', label="GY")
+            self.canvas.axes.legend(loc="upper left")
+
             self._plot_ref1 = plot_refs1[0]
             self._plot_ref2 = plot_refs2[0]
         else:
