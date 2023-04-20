@@ -26,7 +26,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.canvas = MplCanvas(self, width=5, height=4, dpi=100)
         self.setCentralWidget(self.canvas)
 
-        n_data = 500
+        n_data = 700
         self.xdata = list(range(n_data))
         self.ydata = [2 for i in range(n_data)]
         self.ydata2 = [-2 for i in range(n_data)]
@@ -70,7 +70,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ydata3 = self.ydata2[1:] + [float(az)]
         self.message_num += 1
 
-        if self.message_num % 20 == 0:
+        if self.message_num % 4 == 0:
             self.update_plot()
         # if (self.clientConnection):
         #     self.clientConnection.sendTextMessage(message)
